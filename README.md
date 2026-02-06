@@ -29,6 +29,7 @@ jobs:
     permissions:
       security-events: write
       contents: read
+      actions: read
     steps:
       - name: Scan with HTTP Observatory
         uses: objorke/mdn-observatory-scan@v1

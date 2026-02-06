@@ -19,6 +19,7 @@ jobs:
     permissions:
       security-events: write
       contents: read
+      actions: read
     
     steps:
       - name: Scan with HTTP Observatory
@@ -50,6 +51,7 @@ jobs:
     permissions:
       security-events: write
       contents: read
+      actions: read
     
     steps:
       - name: Scan production site
@@ -82,6 +84,7 @@ jobs:
     permissions:
       security-events: write
       contents: read
+      actions: read
     
     strategy:
       matrix:
@@ -121,6 +124,7 @@ jobs:
     permissions:
       security-events: write
       contents: read
+      actions: read
       pull-requests: write
     
     steps:
@@ -158,6 +162,7 @@ jobs:
     permissions:
       security-events: write
       contents: read
+      actions: read
     
     steps:
       - name: Scan host
