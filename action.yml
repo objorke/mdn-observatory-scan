@@ -1,0 +1,21 @@
+name: 'MDN HTTP Observatory SARIF Scan'
+description: 'Scan a host with Mozilla HTTP Observatory and output SARIF results'
+author: 'objorke'
+branding:
+  icon: 'shield'
+  color: 'blue'
+inputs:
+  host:
+    description: 'The host to scan (e.g., example.com)'
+    required: true
+  output-file:
+    description: 'Output SARIF file path'
+    required: false
+    default: 'observatory-results.sarif'
+outputs:
+  sarif-file:
+    description: 'Path to the generated SARIF file'
+    value: ${{ steps.scan.outputs.sarif-file }}
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

@@ -1,0 +1,31 @@
+name: Example HTTP Observatory Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Scan with HTTP Observatory
+        uses: ./
+        with:
+          host: 'mozilla.org'
+          output-file: 'observatory-results.sarif'
+      
+      - name: Upload SARIF results to GitHub
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'observatory-results.sarif'
+          category: 'http-observatory'
