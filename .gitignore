@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.DS_Store
+.env
+.vscode/
+.idea/
+test-*.js
+test-*.sarif
+*.sarif

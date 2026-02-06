@@ -1,0 +1,25 @@
+{
+  "name": "mdn-observatory-scan-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to scan hosts with MDN HTTP Observatory and output SARIF",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist --source-map --license licenses.txt",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "github-action",
+    "security",
+    "http-observatory",
+    "sarif"
+  ],
+  "author": "objorke",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/exec": "^1.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  }
+}
