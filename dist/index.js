@@ -27709,7 +27709,7 @@ async function run() {
     
     const exitCode = await exec.exec(
       'npx',
-      ['--yes', '@mdn/mdn-http-observatory', host, '--json'],
+      ['--yes', '@mdn/mdn-http-observatory', host],
       options
     );
     
