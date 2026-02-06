@@ -1,0 +1,72 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "MDN HTTP Observatory",
+          "informationUri": "https://developer.mozilla.org/en-US/observatory",
+          "version": "1.0.0",
+          "rules": [
+            {
+              "id": "observatory/test-name",
+              "name": "test-name",
+              "shortDescription": {
+                "text": "Description of the test"
+              },
+              "fullDescription": {
+                "text": "Full description of what the test checks"
+              },
+              "help": {
+                "text": "Recommendation for fixing the issue"
+              },
+              "properties": {
+                "tags": ["security", "http-headers"]
+              },
+              "defaultConfiguration": {
+                "level": "error|warning|note"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "observatory/test-name",
+          "level": "error|warning|note",
+          "message": {
+            "text": "Description of the finding"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "https://example.com/",
+                  "uriBaseId": "ROOTURI"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "pass": false,
+            "score_modifier": -25
+          }
+        }
+      ],
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "endTimeUtc": "2026-02-06T16:52:38.254Z"
+        }
+      ],
+      "properties": {
+        "host": "example.com",
+        "scanDate": "2026-02-06T16:52:38.255Z",
+        "score": 85,
+        "grade": "B+",
+        "likelihood_indicator": "MEDIUM"
+      }
+    }
+  ]
+}
