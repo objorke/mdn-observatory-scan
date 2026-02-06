@@ -15,7 +15,6 @@ inputs:
 outputs:
   sarif-file:
     description: 'Path to the generated SARIF file'
-    value: ${{ steps.scan.outputs.sarif-file }}
 runs:
   using: 'node20'
   main: 'dist/index.js'

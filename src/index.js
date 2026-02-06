@@ -81,6 +81,11 @@ function convertToSARIF(host, scanResults) {
       
       // Only add results for failures or warnings
       if (level !== 'none') {
+        // Determine protocol - default to https, but check if host includes protocol
+        const uri = host.startsWith('http://') || host.startsWith('https://') 
+          ? host 
+          : `https://${host}/`;
+        
         const result = {
           ruleId: ruleId,
           level: level,
@@ -91,7 +96,7 @@ function convertToSARIF(host, scanResults) {
             {
               physicalLocation: {
                 artifactLocation: {
-                  uri: `https://${host}/`,
+                  uri: uri,
                   uriBaseId: 'ROOTURI'
                 }
               }

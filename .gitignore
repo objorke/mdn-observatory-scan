@@ -4,3 +4,6 @@ node_modules/
 .env
 .vscode/
 .idea/
+test-*.js
+test-*.sarif
+*.sarif
